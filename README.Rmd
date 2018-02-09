@@ -1,0 +1,33 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "inst/"
+)
+
+library(printr)
+```
+
+# cdlTools [![](http://www.r-pkg.org/badges/version/cdlTools)](http://www.r-pkg.org/pkg/cdlTools)
+[![CRAN RStudio mirror downloads](http://cranlogs.r-pkg.org/badges/cdlTools)](http://www.r-pkg.org/pkg/cdlTools)
+
+## Tools to Download and Work with USDA Cropscape Data
+
+```{r echo=FALSE}
+library(help = 'cdlTools')
+```
+
+```{r }
+library(cdlTools)
+library(raster)
+
+ri <- getCDL("RI", 2015, ssl.verifypeer = FALSE)
+
+plot(ri$RI2015)
+```
